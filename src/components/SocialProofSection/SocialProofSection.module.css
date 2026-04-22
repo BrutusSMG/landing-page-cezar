@@ -1,0 +1,23 @@
+/* src/components/SocialProofSection/SocialProofSection.module.css */
+
+.proofContainer {
+  background-color: #ffffff; /* Fundo branco para destacar */
+  padding: 40px 24px;
+  text-align: center;
+  border-bottom: 1px solid #dde4eb;
+}
+
+.title {
+  font-size: 1rem; /* 16px */
+  font-weight: 500;
+  color: #718096; /* Cinza para não competir com os títulos principais */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+
+.logo {
+  max-width: 200px; /* Define uma largura máxima para o logo */
+  height: auto; /* Mantém a proporção */
+  opacity: 0.8; /* Leve opacidade para integrar melhor ao design */
+}

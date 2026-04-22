@@ -1,0 +1,36 @@
+/* src/components/HowItWorksSection/HowItWorksSection.module.css */
+
+.sectionContainer {
+  padding: 80px 24px;
+  background-color: #f0f4f8; /* Mesmo fundo da Hero para consistência */
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2.0rem; 
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 16px;
+}
+
+.sectionSubtitle {
+  font-size: 1.25rem; /* 20px */
+  color: #4a5568;
+  max-width: 600px;
+  margin: 0 auto 48px auto; /* Espaçamento inferior maior para dar foco ao vídeo */
+}
+
+.videoWrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden; /* Garante que o vídeo respeite o border-radius */
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  background-color: #000; /* Fundo preto caso o vídeo demore a carregar */
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  display: block; /* Remove espaço extra abaixo do vídeo */
+}

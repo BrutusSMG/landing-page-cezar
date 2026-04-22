@@ -1,0 +1,23 @@
+/* src/components/Button/Button.module.css */
+
+.button {
+  display: inline-block;
+  background-color: #72B951; 
+  color: #ffffff;
+  padding: 16px 32px;
+  font-size: 1rem; /* 16px */
+  font-weight: 700; /* Negrito para dar destaque */
+  text-transform: uppercase; /* Caixa alta para CTAs fortes */
+  letter-spacing: 0.05em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease; /* Transição suave */
+  text-decoration: none; /* Remove sublinhado se usarmos o botão como link */
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #5a9441; /* Um tom de azul mais escuro no hover */
+  transform: translateY(-2px); /* Efeito de "levantar" o botão */
+}

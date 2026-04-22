@@ -1,0 +1,57 @@
+/* src/components/AuthoritySection/AuthoritySection.module.css */
+
+.sectionContainer {
+  background-color: #ffffff; /* Fundo branco para diferenciar da seção anterior */
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 48px; /* Mais espaço para os cards respirarem */
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Cria um grid de 3 colunas */
+  gap: 40px; /* Espaço entre os cards */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.featureCard {
+  text-align: center;
+  padding: 24px;
+}
+
+.iconWrapper {
+  font-size: 3rem; /* Tamanho do emoji/ícone */
+  margin-bottom: 16px;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 8px;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4a5568;
+}
+
+/* Media Query para Responsividade */
+@media (max-width: 768px) {
+  .featuresGrid {
+    grid-template-columns: 1fr; /* Em telas menores, fica uma coluna só */
+    gap: 48px; /* Aumenta o espaço vertical entre os cards */
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+}

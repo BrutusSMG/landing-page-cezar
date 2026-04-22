@@ -1,0 +1,107 @@
+/* src/components/Header/Header.module.css */
+
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 12px 24px; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/* NOVO: Contêiner para controlar o layout */
+.headerContainer {
+  max-width: 800px; /* Define uma largura máxima */
+  margin: 0 auto; /* Centraliza o contêiner */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.licenseeInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.photoContainer {
+  position: relative; /* Essencial para o posicionamento absoluto do filho */
+  display: block; /* Garante que o contêiner se comporte bem */
+}
+
+.headerPhoto {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.seniorBadge {
+  position: absolute; /* Desprende o selo do fluxo normal */
+  right: -5px;      /* Move para a direita */
+  bottom: -5px;     /* Move para baixo */
+  width: 24px;      /* Tamanho do selo */
+  height: 24px;     /* Tamanho do selo */
+}
+
+.licenseeText {
+  text-align: left;
+}
+
+.licenseeName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0;
+}
+
+.licenseeTitle {
+  font-size: 0.9rem;
+  color: #718096;
+  margin: 0;
+}
+
+.contactInfo a {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espaço entre o ícone e o número */
+  font-size: 1.1rem; /* Aumentei um pouco para dar destaque */
+  font-weight: 600;
+  color: #2d3748; /* Cor mais escura para o texto */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contactInfo a:hover {
+  color: #72B951; /* Verde iGreen no hover */
+}
+
+.contactInfo span {
+  font-size: 1.5rem; /* Tamanho do ícone de telefone */
+  color: #72B951; /* Ícone verde */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .header {
+    position: static;
+  }
+  .headerContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+  /* Centraliza o nome no mobile */
+  .licenseeInfo {
+    flex-direction: column;
+  }
+  .licenseeText {
+    text-align: center;
+  }
+}
