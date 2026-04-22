@@ -37,8 +37,8 @@
 
 .footerSeniorBadge {
   position: absolute;
-  right: -35px;
-  bottom: 75px;
+  right: -25px;
+  bottom: -15px;
   width: 100px; /* Tamanho maior para a foto maior */
   height: 100px;
 }

@@ -20,15 +20,15 @@ const Footer = () => {
             <Image
               src="/cezarmachado.png"
               alt="Foto de Cezar Machado"
-              width={80}
-              height={80}
+              width={300 }
+              height={300}
               className={styles.footerPhoto}
             />
             <Image
               src="/senior.png"
               alt="Selo de Licenciado Sênior"
-              width={100}
-              height={100}
+              width={200}
+              height={200}
               className={styles.footerSeniorBadge}
             />
           </div>
