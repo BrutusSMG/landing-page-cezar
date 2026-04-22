@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 80px 24px;
+  padding: 0px 24px;
   text-align: center;
   background-color: #f7fafc; /* Um branco levemente acinzentado */
   min-height: 70vh; /* Garante uma boa altura */
@@ -14,7 +14,7 @@
 
 /* O highlight agora usa a cor oficial */
 .highlight {
-  color: #72B951; /* Verde iGreen */
+  color: #35a72a; /* Verde iGreen */
   font-weight: 700;
 }
 

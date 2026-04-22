@@ -1,74 +1,72 @@
 /* src/components/ContactForm/ContactForm.module.css */
 
-.sectionContainer {
+.formSection {
   padding: 80px 24px;
-  background-color: #f0f4f8; /* Fundo suave para destacar o formulário */
+  background-color: #f7fafc;
 }
 
+/* NOVO: Wrapper para dar destaque */
 .formWrapper {
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
   background-color: #ffffff;
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  /* NOVO: Borda superior verde para dar um toque de cor */
+  border-top: 6px solid var(--igreen-verde);
 }
 
-.formTitle {
+.title {
   font-size: 2.2rem;
   font-weight: 700;
-  color: #1a202c;
+  color: var(--cor-primaria-texto);
+  text-align: center;
   margin-bottom: 16px;
 }
 
-.formSubtitle {
+.subtitle {
   font-size: 1.1rem;
-  color: #4a5568;
-  margin-bottom: 32px;
+  color: var(--cor-secundaria-texto);
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 20px;
-  text-align: left;
 }
 
-.formGroup {
+.inputGroup {
   display: flex;
   flex-direction: column;
 }
 
-.formGroup label {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #4a5568;
+.label {
   margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--cor-secundaria-texto);
 }
 
-.formGroup input {
+.input {
   padding: 14px;
   border: 1px solid #cbd5e0;
   border-radius: 8px;
   font-size: 1rem;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.formGroup input:focus {
+.input:focus {
   outline: none;
-  border-color: #0070f3;
-  box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.2);
+  border-color: var(--igreen-verde);
+  box-shadow: 0 0 0 3px rgba(53, 167, 42, 0.2);
 }
 
-.privacyText {
-  font-size: 0.8rem;
-  color: #718096;
+.buttonWrapper {
+  margin-top: 16px;
   text-align: center;
-  margin-top: 16px;
-}
-
-/* Estilo para o botão dentro do formulário */
-.submitButton {
-  margin-top: 16px;
 }

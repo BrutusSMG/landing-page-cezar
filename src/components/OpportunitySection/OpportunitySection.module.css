@@ -3,7 +3,7 @@
 .sectionContainer {
   padding: 80px 24px;
   /* Um gradiente sutil para dar um toque premium e diferente */
-  background: linear-gradient(45deg, #1a202c, #2d3748);
+  background: linear-gradient(45deg, #35a72a, #2d3748);
   color: #ffffff;
   text-align: center;
 }
@@ -23,7 +23,7 @@
 
 .highlight {
   /* Usando uma cor vibrante para o destaque, pode ser um verde ou amarelo */
-  color: #48bb78; 
+  color: #35a72a; 
 }
 
 .sectionSubtitle {

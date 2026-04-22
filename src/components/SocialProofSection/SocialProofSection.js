@@ -3,8 +3,16 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from './SocialProofSection.module.css';
+import Button from '../Button/Button';
 
-const SocialProofSection = () => {
+const SocialProofSection = ({ showCtaButton }) => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className={styles.proofContainer}>
       <p className={styles.title}>Uma solução com a confiança da</p>
@@ -15,6 +23,10 @@ const SocialProofSection = () => {
         height={79}  // Altura em pixels
         className={styles.logo}
       />
+
+      <div className={`${styles.ctaWrapper} ${showCtaButton ? styles.ctaWrapperVisible : ''}`}>
+        <Button text="Quero Minha Economia Agora!" onClick={scrollToContact} />
+      </div>
     </div>
    );
 };

@@ -1,8 +1,8 @@
 /* src/components/SocialProofSection/SocialProofSection.module.css */
 
 .proofContainer {
-  background-color: #ffffff; /* Fundo branco para destacar */
-  padding: 40px 24px;
+  background-color: #f7fafc; /* Fundo branco para destacar */
+  padding: 0px 24px 60px;
   text-align: center;
   border-bottom: 1px solid #dde4eb;
 }
@@ -14,10 +14,27 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 24px;
+  margin-top: 0px;
 }
 
 .logo {
   max-width: 200px; /* Define uma largura máxima para o logo */
   height: auto; /* Mantém a proporção */
   opacity: 0.8; /* Leve opacidade para integrar melhor ao design */
+}
+
+.ctaWrapper {
+  margin-top: 24px;
+  /* Animação de aparição */
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  height: 0;
+  overflow: hidden;
+}
+
+.ctaWrapperVisible {
+  opacity: 1;
+  transform: translateY(0);
+  height: auto; /* Altura automática para ocupar o espaço necessário */
 }

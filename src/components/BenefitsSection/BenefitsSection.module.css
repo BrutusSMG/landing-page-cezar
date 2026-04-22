@@ -2,7 +2,7 @@
 
 .sectionContainer {
   padding: 80px 24px;
-  background-color: #ffffff; /* Fundo branco para um visual limpo */
+  background-color: #ffffff; /* Fundo branco para um visual mais limpo e aberto */
 }
 
 .titleWrapper {
@@ -13,60 +13,77 @@
 .sectionTitle {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1a202c;
+  color: var(--cor-primaria-texto);
   margin-bottom: 16px;
 }
 
 .sectionSubtitle {
   font-size: 1.25rem;
-  color: #4a5568;
+  color: var(--cor-secundaria-texto);
   max-width: 600px;
   margin: 0 auto;
 }
 
+/* MODIFICADO: O grid agora é de uma coluna só, os itens serão as linhas */
 .benefitsGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Duas colunas em telas maiores */
-  gap: 56px 40px; /* Espaçamento vertical e horizontal */
+  grid-template-columns: 1fr; /* Apenas uma coluna */
+  gap: 48px; /* Espaço entre cada linha de benefício */
   max-width: 900px;
   margin: 0 auto;
 }
 
+/* MODIFICADO: Novo estilo para o item de benefício (layout horizontal) */
 .benefitItem {
   display: flex;
-  align-items: flex-start; /* Alinha o ícone e o texto no topo */
-  gap: 20px;
+  align-items: flex-start; /* Alinha no topo */
+  gap: 24px; /* Espaço entre o ícone e o texto */
 }
 
+/* MODIFICADO: Wrapper do ícone */
 .iconWrapper {
-  font-size: 2.5rem; /* Tamanho do ícone/emoji */
-  color: #0070f3; /* Cor azul para os ícones */
-  margin-top: -5px; /* Pequeno ajuste para alinhar visualmente com o texto */
+  display: inline-flex;
+  padding: 16px;
+  background-color: #e6f4ea; /* Verde bem clarinho */
+  border-radius: 12px;
+}
+
+.iconWrapper svg {
+  width: 32px;
+  height: 32px;
+  color: #35a72a;
+}
+
+/* NOVO: Contêiner para o texto (título + descrição) */
+.textWrapper {
+  text-align: left;
 }
 
 .itemTitle {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #2d3748;
+  color: var(--cor-primaria-texto);
   margin-bottom: 8px;
 }
 
 .itemDescription {
   font-size: 1rem;
   line-height: 1.6;
-  color: #4a5568;
+  color: var(--cor-secundaria-texto);
+}
+
+/* NOVO: Estilo para o botão de ação no final */
+.ctaWrapper {
+  text-align: center;
+  margin-top: 64px;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .benefitsGrid {
-    grid-template-columns: 1fr; /* Uma coluna em telas menores */
+  .benefitItem {
+    /* Opcional: manter o layout horizontal ou mudar para vertical */
+    /* Vamos manter horizontal por enquanto, pois fica bom */
   }
-
-  .titleWrapper {
-    margin-bottom: 48px;
-  }
-
   .sectionTitle {
     font-size: 2rem;
   }

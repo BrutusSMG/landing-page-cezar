@@ -1,36 +1,128 @@
 /* src/components/HowItWorksSection/HowItWorksSection.module.css */
 
+/* MODIFICADO: O contêiner principal agora tem o fundo verde e o padding completo */
 .sectionContainer {
-  padding: 80px 24px;
-  background-color: #f0f4f8; /* Mesmo fundo da Hero para consistência */
+  background-color: #35a72a;
+  padding: 80px 24px; /* Padding unificado para o topo e o fundo */
+  position: relative;
+}
+
+/* REMOVIDO: A classe .topPart não é mais necessária, pois o fundo já está no contêiner principal */
+
+.mainTitle {
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 64px;
+  color: #ffffff; /* Garante que o título seja branco */
   text-align: center;
 }
 
-.sectionTitle {
-  font-size: 2.0rem; 
-  font-weight: 700;
-  color: #1a202c;
-  margin-bottom: 16px;
-}
-
-.sectionSubtitle {
-  font-size: 1.25rem; /* 20px */
-  color: #4a5568;
-  max-width: 600px;
-  margin: 0 auto 48px auto; /* Espaçamento inferior maior para dar foco ao vídeo */
-}
-
-.videoWrapper {
-  max-width: 800px;
+.stepsGrid {
+  display: flex; /* Usando Flexbox para alinhar os itens */
+  justify-content: space-between; /* Distribui o espaço entre os itens */
+  align-items: flex-start; /* Alinha os itens no topo */
+  max-width: 1100px;
   margin: 0 auto;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.stepCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #ffffff; /* Garante que todo o texto do card seja branco */
+  width: 20%;
+}
+
+.stepTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  min-height: 40px;
+}
+
+.stepIcon {
+  margin-bottom: 16px;
+  filter: brightness(0) invert(1);
+}
+
+.connector {
+  position: absolute;
+  top: 100px; /* Alinha verticalmente com os ícones */
+  transform: translateY(50%); /* Centraliza verticalmente */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.arrow {
+  font-size: 2.5rem;
+  line-height: 0.5;
+  transform: scaleX(3.5); /* Deixa a seta um pouco mais larga */
+}
+
+.connector1 {
+  left: 20%; /* Posição entre o 1º e o 2º ícone */
+}
+.connector2 {
+  left: 45%; /* Posição entre o 2º e o 3º ícone */
+}
+.connector3 {
+  left: 72%; /* Posição entre o 3º e o 4º ícone */
+}
+
+.stepDescription {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* MODIFICADO: Estilo do vídeo wrapper */
+.videoWrapper {
+  max-width: 900px;
+  margin: 0 auto; /* Centraliza o vídeo */
   border-radius: 12px;
-  overflow: hidden; /* Garante que o vídeo respeite o border-radius */
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  background-color: #000; /* Fundo preto caso o vídeo demore a carregar */
+  overflow: hidden;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+  
+  /* MODIFICADO: A borda agora é laranja */
+  border: 5px solid #FFA500; /* Laranja! */
+  
+  /* O posicionamento relativo e a margem negativa não são mais necessários */
+  position: relative;
+  z-index: 2;
 }
 
 .video {
   width: 100%;
   height: auto;
-  display: block; /* Remove espaço extra abaixo do vídeo */
+  display: block;
+}
+
+/* Responsividade (sem grandes mudanças aqui) */
+@media (max-width: 1024px) {
+  .stepsGrid {
+    display: grid; /* Volta a ser grid em telas menores */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+  }
+  /* Esconde os conectores quando o layout quebra */
+  .connector {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .stepsGrid {
+    grid-template-columns: 1fr;
+    margin-bottom: 60px;
+  }
 }
