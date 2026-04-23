@@ -9,10 +9,9 @@
 
 .title {
   font-size: 1rem; /* 16px */
-  font-weight: 500;
+  font-weight: 600;
   color: #718096; /* Cinza para não competir com os títulos principais */
   text-transform: uppercase;
-  letter-spacing: 0.1em;
   margin-bottom: 24px;
   margin-top: 0px;
 }

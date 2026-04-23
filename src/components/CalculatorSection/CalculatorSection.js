@@ -13,8 +13,8 @@ const CalculatorSection = ({ onCalculationDone }) => {
       setEconomy(null);
       return;
     }
-    // Assumindo uma economia de 15%
-    const monthlyEconomy = value * 0.15;
+    // Assumindo uma economia de 8%
+    const monthlyEconomy = value * 0.08;
     const yearlyEconomy = monthlyEconomy * 12;
 
     setEconomy({
@@ -25,7 +25,8 @@ const CalculatorSection = ({ onCalculationDone }) => {
     if (onCalculationDone) {
       onCalculationDone({
         billValue: value, // O valor numérico da conta
-        monthlyEconomy: monthlyEconomy.toFixed(2).replace('.', ','), // A economia formatada
+        monthlyEconomy: monthlyEconomy.toFixed(2).replace('.', ','),
+        yearlyEconomy: yearlyEconomy.toFixed(2).replace('.', ','),
       });      
     } 
   };
@@ -35,21 +36,25 @@ const CalculatorSection = ({ onCalculationDone }) => {
       <div className={styles.calculatorWrapper}>
         <h3 className={styles.title}>Descubra AGORA quanto você pode economizar</h3>
         <div className={styles.inputGroup}>
-          <input
-            type="number"
-            className={styles.input}
-            value={billValue}
-            onChange={(e) => setBillValue(e.target.value)}
-            placeholder="R$ 350"
-          />
+          <div className={styles.inputWrapper}>
+            <span className={styles.inputPrefix}>R$</span>
+            <input
+              type="number"
+              className={styles.input}
+              value={billValue}
+              onChange={(e) => setBillValue(e.target.value)}
+              placeholder="350,00"
+              required
+            />
+          </div>
           <Button text="Simular minha economia" onClick={handleCalculate} />
         </div>
 
         {economy && (
           <div className={styles.results}>
             <p>Sua economia estimada é de:</p>
-            <p className={styles.mainResult}>R$ {economy.monthly} por mês</p>
-            <p>Isso é R$ {economy.yearly} por ano!</p>
+            <p className={styles.mainResult}>R$ {economy.yearly} por ano!</p>
+            <p className={styles.secondaryResult}>ou R$ {economy.monthly} por mês</p>
           </div>
         )}
       </div>

@@ -21,20 +21,52 @@
 .inputGroup {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 16px;
   margin-bottom: 32px;
 }
-.input {
+
+.inputWrapper {
+  display: flex;
+  align-items: baseline;
   padding: 14px;
   border: 1px solid #cbd5e0;
   border-radius: 8px;
+  background-color: #ffffff; /* Fundo branco */
+  width: 250px; /* Largura do componente inteiro */
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.inputPrefix {
   font-size: 1.2rem;
-  width: 200px;
-  text-align: center;
+  font-weight: 600;
+  color: var(--cor-secundaria-texto);
+  margin-right: 8px; /* Espaço entre o R$ e o número */
+}
+.input {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 0;
+  font-size: 1.2rem;
+  text-align: left; /* Alinha à esquerda, pois o R$ já está lá */
+  color: var(--cor-primaria-texto);
+  font-size: 1.2rem;
+  width: 100%; 
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input[type=number] {
+  -moz-appearance: textfield;
 }
 .results {
   background-color: #e6f4ea; /* Fundo verde claro */
-  border: 2px solid var(--igreen-verde);
+  border: 2px solid #35a72a;
   padding: 24px;
   border-radius: 8px;
   max-width: 500px;
@@ -43,12 +75,77 @@
 .results p {
   margin: 0;
   font-size: 1.2rem;
-  color: var(--cor-primaria-texto);
+  color: var(--cor-secundaria-texto);
   font-weight: 500;
 }
 .mainResult {
   font-size: 2.5rem !important;
   font-weight: 700 !important;
-  color: var(--igreen-verde) !important;
+  color: #35a72a !important;
   margin-bottom: 8px !important;
+  animation: pulse 2s infinite;
+}
+
+.secondaryResult {
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  color: var(--cor-primaria-texto) !important;
+  margin-bottom: 16px !important;
+}
+
+/* NOVO: Bloco de responsividade para o mobile */
+@media (max-width: 768px) {
+  .calculatorWrapper {
+    /* Remove o padding lateral, mantendo o vertical */
+    padding: 40px 0; 
+  }
+  .title {
+    font-size: 2rem; /* Ajusta o título principal */
+  }
+
+  .results {
+    max-width: 100%; /* Faz o resultado ocupar toda a largura disponível */
+    border-radius: 8px; 
+  }
+
+  .inputGroup {
+    flex-direction: column; /* Empilha o input e o botão */
+    align-items: stretch; /* Faz os itens ocuparem a largura total */
+  }
+
+  .inputWrapper {
+    width: 100%;
+  }
+
+  .input {
+    width: 100%; /* Input ocupa toda a largura */
+    margin-bottom: 16px; /* Espaço entre o input e o botão */
+  }
+
+  /* O componente Button já se adapta bem à largura total */
+
+  .mainResult {
+    font-size: 1.8rem !important; /* Ajusta o tamanho da fonte principal */
+  }
+
+  .secondaryResult {
+    font-size: 1rem !important; /* Ajusta o tamanho da fonte secundária */
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 0 rgba(53, 167, 42, 0.4);
+  }
+  
+  70% {
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho */
+    text-shadow: 0 0 10px rgba(53, 167, 42, 0.7); /* Adiciona um brilho verde */
+  }
+  
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 0 rgba(53, 167, 42, 0.4);
+  }
 }

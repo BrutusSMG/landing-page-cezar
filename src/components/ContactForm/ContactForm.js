@@ -1,10 +1,9 @@
-// src/components/ContactForm/ContactForm.js
 import React, { useState, useEffect } from 'react';
 import styles from './ContactForm.module.css';
 import Button from '../Button/Button';
 
-// Recebe a prop 'initialData' da página principal
 const ContactForm = ({ initialData }) => {
+  // Define o estado inicial dos campos do formulário
   const initialState = {
     name: '',
     email: '',
@@ -15,29 +14,31 @@ const ContactForm = ({ initialData }) => {
   const [formData, setFormData] = useState(initialState);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // EFEITO: Este bloco de código roda sempre que 'initialData' muda.
-  // É responsável por pré-preencher o formulário.
+  // Este useEffect é responsável por pré-preencher o formulário
+  // quando os dados da calculadora chegam pela primeira vez.
   useEffect(() => {
+    // Só executa se 'initialData' existir e tiver um valor de conta
     if (initialData && initialData.billValue) {
       setFormData(prevData => ({
         ...prevData,
-        avgBill: initialData.billValue.toString(), // Pré-preenche o consumo
+        avgBill: initialData.billValue.toString(), // Pré-preenche o campo de consumo
       }));
     }
-  }, [initialData]);
+  }, [initialData]); // A dependência [initialData] garante que isso rode sempre que os dados da calculadora mudarem.
 
-  // FUNÇÃO ÚNICA DE MUDANÇA: Esta função atualiza qualquer campo do formulário.
+  // Função universal para atualizar o estado do formulário conforme o usuário digita
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevData => ({ ...prevData, [name]: value }));
   };
 
-  // FUNÇÃO DE ENVIO: Lida com o clique no botão de submit.
+  // Função para lidar com o envio do formulário
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    
+    setIsSubmitting(true); // Inicia o estado de envio
+
     try {
+      // Envia os dados para o endpoint do Formspree
       const response = await fetch(process.env.NEXT_PUBLIC_FORMSPREE_URL, {
         method: 'POST',
         headers: {
@@ -48,22 +49,22 @@ const ContactForm = ({ initialData }) => {
       });
 
       if (response.ok) {
-        alert('Obrigado! Seus dados foram enviados com sucesso.');
-        setFormData(initialState); // Limpa o formulário
+        alert('Obrigado! Seus dados foram enviados com sucesso e em breve entraremos em contato.');
+        setFormData(initialState); // Limpa o formulário após o sucesso
       } else {
-        // Se o Formspree retornar um erro
-        alert('Ocorreu um erro ao enviar o formulário. Por favor, tente novamente.');
+        alert('Ocorreu um erro ao enviar o formulário. Por favor, tente novamente mais tarde.');
       }
     } catch (error) {
+      console.error('Erro de conexão ao enviar o formulário:', error);
       alert('Ocorreu um erro de conexão. Por favor, verifique sua internet e tente novamente.');
     } finally {
-      setIsSubmitting(false); // Reabilita o botão
+      setIsSubmitting(false); // Finaliza o estado de envio, reabilitando o botão
     }
   };
 
-  // LÓGICA DO TÍTULO: Define o texto do título com base nos dados recebidos.
-  const titleText = initialData
-    ? `Pronto para economizar R$ ${initialData.monthlyEconomy} por mês?`
+  // Lógica para definir o título do formulário de forma dinâmica
+  const titleText = initialData && initialData.yearlyEconomy
+    ? `Pronto para economizar R$ ${initialData.yearlyEconomy} por ano?`
     : 'Comece a economizar agora!';
 
   return (
@@ -81,12 +82,13 @@ const ContactForm = ({ initialData }) => {
             <input
               type="text"
               id="name"
-              name="name" // O 'name' deve corresponder à chave no objeto formData
+              name="name"
               className={styles.input}
-              value={formData.name} // O valor vem do estado
-              onChange={handleChange} // A função de mudança é a mesma para todos
+              value={formData.name}
+              onChange={handleChange}
               placeholder="Ex: João da Silva"
               required
+              disabled={isSubmitting}
             />
           </div>
 
@@ -102,6 +104,7 @@ const ContactForm = ({ initialData }) => {
               onChange={handleChange}
               placeholder="Ex: joao.silva@email.com"
               required
+              disabled={isSubmitting}
             />
           </div>
 
@@ -117,6 +120,7 @@ const ContactForm = ({ initialData }) => {
               onChange={handleChange}
               placeholder="Ex: (41) 99999-8888"
               required
+              disabled={isSubmitting}
             />
           </div>
 
@@ -132,6 +136,7 @@ const ContactForm = ({ initialData }) => {
               onChange={handleChange}
               placeholder="Ex: 350"
               required
+              disabled={isSubmitting}
             />
           </div>
 

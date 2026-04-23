@@ -28,7 +28,7 @@
 .licenseeInfo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 30px;
 }
 
 .photoContainer {
@@ -74,7 +74,7 @@
   gap: 8px; /* Espaço entre o ícone e o número */
   font-size: 1.1rem; /* Aumentei um pouco para dar destaque */
   font-weight: 600;
-  color: #2d3748; /* Cor mais escura para o texto */
+  color: #35a72a; /* Cor mais escura para o texto */
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -84,8 +84,14 @@
 }
 
 .contactInfo span {
-  font-size: 1.5rem; /* Tamanho do ícone de telefone */
-  color: #72B951; /* Ícone verde */
+  font-size: 1.2rem; /* Tamanho do ícone de telefone */
+  color: #35a72a; /* Ícone verde */
+}
+
+.profileWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 /* Responsividade */
@@ -100,8 +106,10 @@
   /* Centraliza o nome no mobile */
   .licenseeInfo {
     flex-direction: column;
+    align-items: center;
+    gap: 12px;
   }
   .licenseeText {
-    text-align: center;
+    text-align: left;
   }
 }

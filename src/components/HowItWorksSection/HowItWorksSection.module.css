@@ -124,5 +124,12 @@
   .stepsGrid {
     grid-template-columns: 1fr;
     margin-bottom: 60px;
+    gap: 40px;
+  }
+  .stepCard {
+    /* Garante que o card não tenha uma largura fixa de 20% */
+    width: 100%; 
+    /* Garante que o conteúdo interno (título, ícone) seja centralizado */
+    align-items: center; 
   }
 }
