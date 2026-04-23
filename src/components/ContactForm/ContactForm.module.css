@@ -70,3 +70,30 @@
   margin-top: 16px;
   text-align: center;
 }
+
+.successMessage {
+  text-align: center;
+  padding: 60px 20px; /* Padding interno para a mensagem */
+}
+
+.successIcon {
+  color: var(--igreen-verde);
+  width: 80px;
+  height: 80px;
+  margin-bottom: 24px;
+}
+
+.successTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--cor-primaria-texto);
+  margin-bottom: 16px;
+}
+
+.successText {
+  font-size: 1.1rem;
+  color: var(--cor-secundaria-texto);
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto; /* Centraliza o texto */
+}

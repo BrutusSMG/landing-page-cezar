@@ -11,6 +11,13 @@ const Footer = () => {
   const facebookIconUrl = "https://static.wixstatic.com/media/4057345bcf57474b96976284050c00df.png/v1/fill/w_39,h_39,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/4057345bcf57474b96976284050c00df.png";
   const linkedinIconUrl = "https://static.wixstatic.com/media/aa0402eb9ba2430d9d0620b59556efca.png/v1/fill/w_39,h_39,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/aa0402eb9ba2430d9d0620b59556efca.png";
 
+  const instagramUrl = 'https://www.instagram.com/celso.machado.silva?igsh=OXpkY20wczg0bDF5';
+  const facebookUrl = 'https://www.facebook.com/share/1D1Zh1zwb1/';
+  const linkedinUrl = 'https://br.linkedin.com/in/celsomachadosilva';
+  const emailAddress = 'celso.machado.silva@hotmail.com';
+  const whatsappNumber = '5541998880161'; 
+  const formattedWhatsapp = '(41) 99888-0161';
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
@@ -41,9 +48,11 @@ const Footer = () => {
           <h4>Contato</h4>
           <ul>
             {/* Substitua pelo seu link do WhatsApp */}
-            <li><a href="https://wa.me/5541997694828" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            <li><a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer">
+              {formattedWhatsapp}
+            </a></li>
             {/* Substitua pelo seu email */}
-            <li><a href="mailto:cezarmachado@email.com">Email</a></li>
+            <li><a href={`mailto:${emailAddress}`}>Email</a></li>
           </ul>
         </div>
 
@@ -52,13 +61,13 @@ const Footer = () => {
           <h4>Siga-me</h4>
           <div className={styles.socialIcons}>
             {/* Substitua # pelos links reais das suas redes sociais */}
-            <a href="#" target="_blank" rel="noopener noreferrer" title="Instagram">
+            <a href={instagramUrl} target="_blank" rel="noopener noreferrer" title="Instagram">
               <Image src={instagramIconUrl} alt="Instagram" width={32} height={32} className={styles.socialIconImage} />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" title="Facebook">
+            <a href={facebookUrl} target="_blank" rel="noopener noreferrer" title="Facebook">
               <Image src={facebookIconUrl} alt="Facebook" width={32} height={32} className={styles.socialIconImage} />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+            <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" title="LinkedIn">
               <Image src={linkedinIconUrl} alt="LinkedIn" width={32} height={32} className={styles.socialIconImage} />
             </a>
           </div>

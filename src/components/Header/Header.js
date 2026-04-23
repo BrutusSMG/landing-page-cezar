@@ -4,8 +4,8 @@ import Image from 'next/image';
 import styles from './Header.module.css';
 
 const Header = () => {
-  const phoneNumber = '41997694828';
-  const formattedPhoneNumber = '(41) 99769-4828';
+  const phoneNumber = ' 41998880161';
+  const formattedPhoneNumber = '(41) 99888-0161';
 
   return (
     <header className={styles.header}>
