@@ -25,8 +25,8 @@ const Footer = () => {
         <div className={styles.aboutColumn}>
           <div className={styles.footerPhotoContainer}>
             <Image
-              src="/cezarmachado.png"
-              alt="Foto de Cezar Machado"
+              src="/celsomachado.png"
+              alt="Foto de Celso Machado"
               width={300 }
               height={300}
               className={styles.footerPhoto}
@@ -39,7 +39,7 @@ const Footer = () => {
               className={styles.footerSeniorBadge}
             />
           </div>
-          <h3>Cezar Machado</h3>
+          <h3>Celso Machado</h3>
           <p>Licenciado Sênior iGreen Energy, ajudando pessoas e empresas a economizar com energia limpa e sustentável.</p>
         </div>
 
@@ -75,7 +75,7 @@ const Footer = () => {
       </div>
 
       <div className={styles.copyright}>
-        <p>© {currentYear} Cezar Machado. Todos os direitos reservados.</p>
+        <p>© {currentYear} Celso Machado. Todos os direitos reservados.</p>
         <p style={{ fontSize: '0.8rem', marginTop: '8px', opacity: 0.7 }}>
           Este é um site de um licenciado independente iGreen Energy. A marca iGreen Energy é propriedade da iGreen Energy S/A.
         </p>

@@ -25,8 +25,8 @@ const Header = () => {
           <div className={styles.profileWrapper}>
             <div className={styles.photoContainer}>
               <Image
-                src="/cezarmachado.png"
-                alt="Foto de Cezar Machado"
+                src="/celsomachado.png"
+                alt="Foto de Celso Machado"
                 width={44}
                 height={44}
                 className={styles.headerPhoto}
@@ -40,7 +40,7 @@ const Header = () => {
               />
             </div>
             <div className={styles.licenseeText}>
-              <p className={styles.licenseeName}>Cezar Machado</p>
+              <p className={styles.licenseeName}>Celso Machado</p>
               <p className={styles.licenseeTitle}>Licenciado Sênior</p>
             </div>
           </div>
