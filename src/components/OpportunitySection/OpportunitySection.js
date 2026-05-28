@@ -8,8 +8,8 @@ const OpportunitySection = () => {
 
   const handleOpportunityClick = () => {
     // Abre o WhatsApp com uma mensagem pré-definida
-    const phoneNumber = '5541997694828'; // SUBSTITUA PELO WHATSAPP DO CEZAR
-    const message = encodeURIComponent('Olá, Cezar! Vi na sua página que, além de economizar, também posso gerar renda com a iGreen. Gostaria de saber mais sobre a oportunidade.');
+    const phoneNumber = '5541998880161'; 
+    const message = encodeURIComponent('Olá, Celso! Vi na sua página que, além de economizar, também posso gerar renda com a iGreen. Gostaria de saber mais sobre a oportunidade.');
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank' );
   };
 

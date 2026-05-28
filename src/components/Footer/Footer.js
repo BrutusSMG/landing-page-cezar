@@ -21,7 +21,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
-        {/* Coluna 1: Sobre Cezar Machado */}
+        {/* Coluna 1: Sobre Celso Machado */}
         <div className={styles.aboutColumn}>
           <div className={styles.footerPhotoContainer}>
             <Image
