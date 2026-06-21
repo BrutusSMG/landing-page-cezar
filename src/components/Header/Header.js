@@ -4,8 +4,8 @@ import Image from 'next/image';
 import styles from './Header.module.css';
 
 const Header = () => {
-  const phoneNumber = ' 41998880161';
-  const formattedPhoneNumber = '(41) 99888-0161';
+  const whatsappNumber = '5541998880161'; 
+  const formattedWhatsapp = '(41) 99888-0161';
 
   return (
     <header className={styles.header}>
@@ -47,7 +47,7 @@ const Header = () => {
 
           {/* Contato (Telefone ) */}
           <div className={styles.contactInfo}>
-            <a href={`https://wa.me/${phoneNumber}`} target="_blank" rel="noopener noreferrer">
+            <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer">
               {/* Ícone SVG do WhatsApp (Tabler Icons ) */}
               <svg xmlns="http://www.w3.org/2000/svg" className={styles.contactIcon} width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -56,7 +56,7 @@ const Header = () => {
               </svg>
               
               {/* O número formatado para exibição */}
-              <span className={styles.phoneNumberText}>{formattedPhoneNumber}</span>              
+              <span className={styles.phoneNumberText}>{formattedWhatsapp}</span>              
             </a>
           </div>
         </div>

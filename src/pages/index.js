@@ -29,11 +29,11 @@ export default function Home() {
       <HeroSection />
       <HowItWorksSection />
       <CalculatorSection onCalculationDone={handleCalculationDone} />
-      <SocialProofSection showCtaButton={isCtaButtonVisible} />
-      <AuthoritySection />      
+      <ContactForm initialData={calculatorData} />
+      <SocialProofSection showCtaButton={isCtaButtonVisible} />     
       <BenefitsSection />
       <OpportunitySection />
-      <ContactForm initialData={calculatorData} />
+      <AuthoritySection /> 
       <Footer />
     </>
   )

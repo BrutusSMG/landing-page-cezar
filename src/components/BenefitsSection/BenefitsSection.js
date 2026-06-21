@@ -14,14 +14,7 @@ const BenefitItem = ({ icon, title, description }) => (
   </div>
 );
 
-const BenefitsSection = () => {
-  // Função para rolar até o formulário
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+const BenefitsSection = () => {  
 
   return (
     <section className={styles.sectionContainer}>
@@ -59,11 +52,7 @@ const BenefitsSection = () => {
           description="Todo o processo é feito online, de forma rápida, transparente e sem burocracia ou custos de adesão."
         />
       </div>
-
-      {/* NOVO: Botão de Ação */}
-      <div className={styles.ctaWrapper}>
-        <Button text="Quero todos esses benefícios!" onClick={scrollToContact} />
-      </div>
+      
     </section>
    );
 };

@@ -24,9 +24,6 @@ const SocialProofSection = ({ showCtaButton }) => {
         className={styles.logo}
       />
 
-      <div className={`${styles.ctaWrapper} ${showCtaButton ? styles.ctaWrapperVisible : ''}`}>
-        <Button text="Quero Minha Economia Agora!" onClick={scrollToContact} />
-      </div>
     </div>
    );
 };

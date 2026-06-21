@@ -4,13 +4,13 @@ import React from 'react';
 import styles from './OpportunitySection.module.css';
 import Button from '../Button/Button'; // Vamos reutilizar nosso componente Button!
 
-const OpportunitySection = () => {
+const OpportunitySection = ({ showCtaButton }) => {
 
-  const handleOpportunityClick = () => {
-    // Abre o WhatsApp com uma mensagem pré-definida
-    const phoneNumber = '5541998880161'; 
-    const message = encodeURIComponent('Olá, Celso! Vi na sua página que, além de economizar, também posso gerar renda com a iGreen. Gostaria de saber mais sobre a oportunidade.');
-    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank' );
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -26,12 +26,11 @@ const OpportunitySection = () => {
         {/* 
           Aqui, vamos passar uma classe customizada para o nosso componente Button.
           Isso requer uma pequena alteração no componente Button para ele aceitar classes extras.
-        */}
-        <Button 
-          text="Quero saber mais" 
-          onClick={handleOpportunityClick}
-          customClass={styles.secondaryButton} // Passando a classe do botão secundário
-        />
+        */}        
+
+        <div className={`${styles.ctaWrapper} ${showCtaButton ? styles.ctaWrapperVisible : ''}`}>
+          <Button text="Quero saber mais" onClick={scrollToContact} />
+        </div>
       </div>
     </section>
   );

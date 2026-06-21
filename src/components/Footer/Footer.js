@@ -52,7 +52,7 @@ const Footer = () => {
               {formattedWhatsapp}
             </a></li>
             {/* Substitua pelo seu email */}
-            <li><a href={`mailto:${emailAddress}`}>Email</a></li>
+            <li><a href={`mailto:${emailAddress}`}>{emailAddress}</a></li>
           </ul>
         </div>
 

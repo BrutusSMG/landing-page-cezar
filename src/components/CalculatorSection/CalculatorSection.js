@@ -35,6 +35,7 @@ const CalculatorSection = ({ onCalculationDone }) => {
     <section className={styles.sectionContainer}>
       <div className={styles.calculatorWrapper}>
         <h3 className={styles.title}>Descubra AGORA quanto você pode economizar</h3>
+        <p className={styles.subtitle}>Informe o valor médio mensal da sua conta de energia atualmente:</p>
         <div className={styles.inputGroup}>
           <div className={styles.inputWrapper}>
             <span className={styles.inputPrefix}>R$</span>
